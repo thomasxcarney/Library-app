@@ -12,6 +12,25 @@
         <h1>My Library</h1>
         <button id="add-book">Add a book</button>
     </header>
+    <dialog id="add-book-dialog">
+        <form>
+            <label for="title">Book Title</label>
+            <input type="text" name="title" />
+            <label for="author">Author</label>
+            <input type="text" name="author" />
+            <label for="pages">Number of Pages</label>
+            <input type="text" name="pages" />
+            <fieldset class="status-field">
+                <legend>Status</legend>
+                <div class="button-container">
+                    <label for="read">Have Read</label>
+                    <input type="radio" name="read" value="read" checked />
+                    <label for="not-read">Not Read Yet</label>
+                    <input type="radio" name="not-read" value="not-read" />
+                </div>
+            </fieldset>
+        </form>
+    </dialog>
     <div class="books-container">
     </div> 
 </body>

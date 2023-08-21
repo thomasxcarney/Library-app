@@ -1,5 +1,7 @@
 const myLibrary = [];
 const booksContainer = document.querySelector('.books-container');
+const addBookButton = document.querySelector('#add-book');
+const addBookDialog = document.querySelector('#add-book-dialog');
 
 function Book(title, author, pages, status) {
     this.title = title
@@ -27,6 +29,10 @@ function displayBooks() {
         booksContainer.appendChild(newDiv);
     };
 };
+
+addBookButton.addEventListener('click', event => {
+    addBookDialog.showModal();
+})
 
 addBookToLibrary(hobbit);
 addBookToLibrary(danceDance);
