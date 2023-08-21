@@ -15,18 +15,18 @@
     <dialog id="add-book-dialog">
         <form>
             <label for="title">Book Title</label>
-            <input type="text" name="title" />
+            <input type="text" name="title" class="input titleInput" />
             <label for="author">Author</label>
-            <input type="text" name="author" />
+            <input type="text" name="author" class="input authorInput" />
             <label for="pages">Number of Pages</label>
-            <input type="text" name="pages" />
+            <input type="text" name="pages" class="input pagesInput" />
             <fieldset class="status-field">
                 <legend>Status</legend>
                 <div class="option-container">
-                    <label for="read">Have Read</label>
-                    <input type="radio" name="read" value="read" checked />
+                    <label>Have Read</label>
+                    <input type="radio" name="status" value="have read" checked />
                     <label for="not-read">Not Read Yet</label>
-                    <input type="radio" name="not-read" value="not-read" />
+                    <input type="radio" name="status" value="have not read" />
                 </div>
             </fieldset>
             <div class="button-container">
