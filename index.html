@@ -22,13 +22,17 @@
             <input type="text" name="pages" />
             <fieldset class="status-field">
                 <legend>Status</legend>
-                <div class="button-container">
+                <div class="option-container">
                     <label for="read">Have Read</label>
                     <input type="radio" name="read" value="read" checked />
                     <label for="not-read">Not Read Yet</label>
                     <input type="radio" name="not-read" value="not-read" />
                 </div>
             </fieldset>
+            <div class="button-container">
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button id="confirmBtn" value="default">Confirm</button>
+            </div>
         </form>
     </dialog>
     <div class="books-container">
