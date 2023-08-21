@@ -22,7 +22,7 @@ function addBookToLibrary(book) {
 function displayBooks() {
     for(let i = 0; i < myLibrary.length; i++){
         const newDiv = document.createElement('div');
-        newDiv.classList.add('book-card');
+        newDiv.classList.add('book-card', i);
         newDiv.innerHTML += myLibrary[i].info();
         booksContainer.appendChild(newDiv);
     };
