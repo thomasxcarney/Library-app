@@ -7,6 +7,7 @@ const bookDialog = document.querySelector('#add-book-dialog');
 const confirmBtn = document.querySelector('#confirmBtn');
 const allInputs = document.querySelectorAll('.input');
 const haveReadRadio = document.getElementById('read-button');
+const deleteButtons = document.getElementsByClassName('delete');
 
 function Book(title, author, pages, status) {
     this.title = title
@@ -29,8 +30,18 @@ function addBookToLibrary(book) {
 
 function addDeleteButton(parent) {
     const deleteButton = document.createElement('button');
-    deleteButton.innerHTML = 'X'
+    deleteButton.classList.add('delete');
+    deleteButton.innerHTML = 'X';
+    deleteButton.addEventListener('click', event => {
+        let parent = deleteButton.parentNode;
+        deleteCard(parent.classList[1]);
+    })
     parent.appendChild(deleteButton);
+}
+
+function deleteCard(index) {
+    myLibrary.splice(index, 1);
+    displayBooks();
 }
 
 function displayBooks() {
