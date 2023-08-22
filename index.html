@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="scripts.js" defer></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
     <title>Library</title>
 </head>
 <body>
@@ -23,10 +26,14 @@
             <fieldset class="status-field">
                 <legend>Status</legend>
                 <div class="option-container">
-                    <label>Have Read</label>
-                    <input type="radio" name="status" value="have read" class="input read" id="read-button" checked />
-                    <label>Not Read Yet</label>
-                    <input type="radio" name="status" value="have not read" class="input notRead" />
+                    <span class="radio-span">
+                        <input type="radio" name="status" value="have read" class="input read" id="read-button" checked />
+                        <label>Have Read</label>
+                    </span>
+                    <span class="radio-span">
+                        <input type="radio" name="status" value="have not read" class="input notRead" />
+                        <label>Not Read Yet</label>
+                    </span>
                 </div>
             </fieldset>
             <div class="button-container">
