@@ -83,11 +83,11 @@ dialog > form > input{
     width: 200px;
     padding: 10px;
     display: grid;
-    grid-template-rows: min-content 1fr;
+    grid-template-rows: min-content 4fr 1fr;
     border-radius: 10px;
 }
 
-.book-card > button {
+.book-card > button.delete {
     grid-row: 1;
     justify-self: flex-end;
     padding: 1px;
@@ -97,4 +97,10 @@ dialog > form > input{
     border-radius: 50%;
     background-color: red;
     color: white;
+}
+
+.book-card > button.statusBtn {
+    justify-self: center;
+    align-self: center;
+    padding: 10px 20px;
 }

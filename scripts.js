@@ -44,6 +44,28 @@ function deleteCard(index) {
     displayBooks();
 }
 
+function addStatusBtn(parent) {
+    const statusBtn = document.createElement('button');
+    statusBtn.classList.add('statusBtn');
+    statusBtn.innerHTML = 'Change status';
+    statusBtn.addEventListener('click', event => {
+        let parent = statusBtn.parentNode;
+        changeStatus(parent);
+    })
+    parent.appendChild(statusBtn);
+}
+
+function changeStatus(parent) {
+    let bookIndex = parent.classList[1];
+    let book = myLibrary[bookIndex];
+    if(book.status == 'have read') {
+        book.status = 'have not read';
+    } else if(book.status == 'have not read') {
+        book.status = 'have read';
+    };
+    displayBooks();
+}
+
 function displayBooks() {
     booksContainer.innerHTML = '';
     for(let i = 0; i < myLibrary.length; i++){
@@ -51,6 +73,7 @@ function displayBooks() {
         newDiv.classList.add('book-card', i);
         newDiv.innerHTML += myLibrary[i].info();
         addDeleteButton(newDiv);
+        addStatusBtn(newDiv);
         booksContainer.appendChild(newDiv);
     };
 };
