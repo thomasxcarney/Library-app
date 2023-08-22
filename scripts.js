@@ -27,12 +27,19 @@ function addBookToLibrary(book) {
     myLibrary.push(book)
 };
 
+function addDeleteButton(parent) {
+    const deleteButton = document.createElement('button');
+    deleteButton.innerHTML = 'X'
+    parent.appendChild(deleteButton);
+}
+
 function displayBooks() {
     booksContainer.innerHTML = '';
     for(let i = 0; i < myLibrary.length; i++){
         const newDiv = document.createElement('div');
         newDiv.classList.add('book-card', i);
         newDiv.innerHTML += myLibrary[i].info();
+        addDeleteButton(newDiv);
         booksContainer.appendChild(newDiv);
     };
 };
@@ -40,7 +47,6 @@ function displayBooks() {
 addBookButton.addEventListener('click', event => {
     addBookDialog.showModal();
 });
-
 
 function clearInputs() {
     allInputs.forEach(singleInput => singleInput.value = '');
