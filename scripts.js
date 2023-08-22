@@ -6,10 +6,6 @@ const addBookDialog = document.querySelector('#add-book-dialog');
 const bookDialog = document.querySelector('#add-book-dialog');
 const confirmBtn = document.querySelector('#confirmBtn');
 
-const titleInput = document.getElementsByName('title');
-const authorInput = document.getElementsByName('author');
-const pagesInput = document.getElementsByName('pages');
-
 function Book(title, author, pages, status) {
     this.title = title
     this.author = author
@@ -44,12 +40,12 @@ addBookButton.addEventListener('click', event => {
 });
 
 confirmBtn.addEventListener('click', event => {
+    event.preventDefault();
+    bookDialog.close()
     let status = document.querySelector('input[name="status"]:checked').value;
-    let title = titleInput.value;
-    console.log(titleInput.value);
-    console.log(title);
-    let author = authorInput.value;
-    let pages = pagesInput.value;
+    let title = document.querySelector('input[name="title"]').value;
+    let author = document.querySelector('input[name="author"]').value;
+    let pages = document.querySelector('input[name="pages"]').value;
     let newBook = new Book(title, author, pages, status);
     addBookToLibrary(newBook);
     displayBooks();

@@ -13,7 +13,7 @@
         <button id="add-book">Add a book</button>
     </header>
     <dialog id="add-book-dialog">
-        <form>
+        <form onsubmit="return false" id="dialog-form">
             <label for="title">Book Title</label>
             <input type="text" name="title" class="input titleInput" />
             <label for="author">Author</label>
