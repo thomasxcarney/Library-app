@@ -13,7 +13,7 @@
         <button id="add-book">Add a book</button>
     </header>
     <dialog id="add-book-dialog">
-        <form onsubmit="return false" id="dialog-form">
+        <form id="dialog-form">
             <label for="title">Book Title</label>
             <input type="text" name="title" class="input titleInput" />
             <label for="author">Author</label>
@@ -24,9 +24,9 @@
                 <legend>Status</legend>
                 <div class="option-container">
                     <label>Have Read</label>
-                    <input type="radio" name="status" value="have read" checked />
-                    <label for="not-read">Not Read Yet</label>
-                    <input type="radio" name="status" value="have not read" />
+                    <input type="radio" name="status" value="have read" class="input read" id="read-button" checked />
+                    <label>Not Read Yet</label>
+                    <input type="radio" name="status" value="have not read" class="input notRead" />
                 </div>
             </fieldset>
             <div class="button-container">

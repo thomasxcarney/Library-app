@@ -5,6 +5,8 @@ const addBookButton = document.querySelector('#add-book');
 const addBookDialog = document.querySelector('#add-book-dialog');
 const bookDialog = document.querySelector('#add-book-dialog');
 const confirmBtn = document.querySelector('#confirmBtn');
+const allInputs = document.querySelectorAll('.input');
+const haveReadRadio = document.getElementById('read-button');
 
 function Book(title, author, pages, status) {
     this.title = title
@@ -39,6 +41,12 @@ addBookButton.addEventListener('click', event => {
     addBookDialog.showModal();
 });
 
+
+function clearInputs() {
+    allInputs.forEach(singleInput => singleInput.value = '');
+    haveReadRadio.checked = true;
+};
+
 confirmBtn.addEventListener('click', event => {
     event.preventDefault();
     bookDialog.close()
@@ -51,7 +59,8 @@ confirmBtn.addEventListener('click', event => {
     displayBooks();
     event.preventDefault();
     bookDialog.close();
-})
+    clearInputs();
+});
 
 addBookToLibrary(hobbit);
 addBookToLibrary(danceDance);
