@@ -20,8 +20,8 @@ function Book(title, author, pages, status) {
 };
 
 
-const hobbit = new Book('The Hobbit', 'Tolkien', '300', 'have read');
-const danceDance = new Book('Dance Dance Dance', 'Murakami', '450', 'have read')
+const solitude = new Book('100 Years of Solitude', 'Gabriel García Márquez', '417', 'have read');
+const danceDance = new Book('Dance Dance Dance', 'Haruki Murakami', '416', 'have read')
 
 
 function addBookToLibrary(book) {
@@ -71,12 +71,28 @@ function displayBooks() {
     for(let i = 0; i < myLibrary.length; i++){
         const newDiv = document.createElement('div');
         newDiv.classList.add('book-card', i);
-        newDiv.innerHTML += myLibrary[i].info();
+        let book = myLibrary[i];
+        populateBookCard(book, newDiv);
         addDeleteButton(newDiv);
         addStatusBtn(newDiv);
         booksContainer.appendChild(newDiv);
     };
 };
+
+function populateBookCard(book, container) {
+    const title = document.createElement('h3');
+    const author = document.createElement('p');
+    const pages = document.createElement('p');
+    const status = document.createElement('p');
+    title.innerHTML = book.title;
+    author.innerHTML = 'By ' + book.author;
+    pages.innerHTML = book.pages + ' pages';
+    status.innerHTML = book.status;
+    container.appendChild(title);
+    container.appendChild(author);
+    container.appendChild(pages);
+    container.appendChild(status);
+}
 
 addBookButton.addEventListener('click', event => {
     addBookDialog.showModal();
@@ -102,6 +118,6 @@ confirmBtn.addEventListener('click', event => {
     clearInputs();
 });
 
-addBookToLibrary(hobbit);
+addBookToLibrary(solitude);
 addBookToLibrary(danceDance);
 displayBooks();
