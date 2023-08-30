@@ -9,15 +9,18 @@ const allInputs = document.querySelectorAll('.input');
 const haveReadRadio = document.getElementById('read-button');
 const deleteButtons = document.getElementsByClassName('delete');
 
-function Book(title, author, pages, status) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.status = status
-    this.info = function() {
+class Book {
+    constructor(title, author, pages, status){
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.status = status
+    }
+
+    info() {
         return this.title + " by " + this.author + ', ' + this.pages + ' pages, ' + this.status;
     };
-};
+}
 
 
 const solitude = new Book('100 Years of Solitude', 'Gabriel García Márquez', '417', 'have read');
