@@ -76,6 +76,14 @@ dialog > form > input{
     margin-bottom: 10px;
 }
 
+dialog > form > input:invalid {
+    box-shadow: 0 0 5px 1px red;
+}
+
+dialog > form > input:focus:invalid {
+    box-shadow: none;
+}
+
 .button-container button {
     padding: 5px 10px;
     border-radius: 5px;

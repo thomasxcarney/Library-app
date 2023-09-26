@@ -26,20 +26,20 @@
     <dialog id="add-book-dialog">
         <form id="dialog-form">
             <label for="title">Book Title</label>
-            <input type="text" name="title" class="input titleInput" />
+            <input type="text" name="title" class="input titleInput" required />
             <label for="author">Author</label>
-            <input type="text" name="author" class="input authorInput" />
+            <input type="text" name="author" class="input authorInput" required />
             <label for="pages">Number of Pages</label>
-            <input type="text" name="pages" class="input pagesInput" />
+            <input type="text" name="pages" class="input pagesInput" required />
             <fieldset class="status-field">
                 <legend>Status</legend>
                 <div class="option-container">
                     <div class="radio-div read">
-                        <input type="radio" name="status" value="have read" class="input read" id="read-button" checked />
+                        <input type="radio" required name="status" value="have read" class="input read" id="read-button" checked />
                         <label>Have Read</label>
                     </div>
                     <div class="radio-div notRead">
-                        <input type="radio" name="status" value="have not read" class="input notRead" />
+                        <input type="radio" required name="status" value="have not read" class="input notRead" />
                         <label>Not Read Yet</label>
                     </div>
                 </div>
