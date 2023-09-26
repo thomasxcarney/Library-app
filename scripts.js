@@ -106,8 +106,31 @@ function clearInputs() {
     haveReadRadio.checked = true;
 };
 
+const titleInput = document.getElementById("title");
+const authorInput = document.getElementById('author');
+const pagesInput = document.getElementById('pages');
+
+const checkInputValidity = function checkInputValidityOnSubmit(element) {
+    if(element.validity.valueMissing) {
+        return false;
+        // element.setCustomValidity('This field is required');
+        // element.reportValidity();
+    } else return true;
+};
+
+const checkAllInputs = function checkValidityOfAllInputs(input1, input2, input3){
+    if(checkInputValidity(input1) && checkInputValidity(input2) && checkInputValidity(input3)){
+        addNewBook();
+    };
+};
+
 confirmBtn.addEventListener('click', event => {
     event.preventDefault();
+    checkAllInputs(titleInput, authorInput, pagesInput);
+});
+
+
+const addNewBook = function addNewBookFromFormData(){
     bookDialog.close()
     let status = document.querySelector('input[name="status"]:checked').value;
     let title = document.querySelector('input[name="title"]').value;
@@ -116,10 +139,9 @@ confirmBtn.addEventListener('click', event => {
     let newBook = new Book(title, author, pages, status);
     addBookToLibrary(newBook);
     displayBooks();
-    event.preventDefault();
     bookDialog.close();
     clearInputs();
-});
+};
 
 addBookToLibrary(solitude);
 addBookToLibrary(danceDance);
